@@ -36,7 +36,7 @@ def main():
     st.title("Thyroid Disorder Prediction")
     st.markdown('<style>h1 {color: red; text-align: center;font-size:100px; font-weight:bold;}</style>', unsafe_allow_html=True)
     st.markdown('<style>body {background-color: yellow;}</style>', unsafe_allow_html=True)
-    st.image("C:/Users/bhara/Desktop/PRO/static/images/banner_img.png", use_column_width=True)
+    st.image("./banner_img.png", use_column_width=True)
 
     # Input fields
     st.subheader("Patient Information")
