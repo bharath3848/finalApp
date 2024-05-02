@@ -29,7 +29,7 @@ disease or not.
 # Snippets of Project
 
 1)Webapp Home page
-![img](https://imgur.com/a/Y5WtuAE)
+![img](https://imgur.com/TLFjxId)
 
 
 # Authors
