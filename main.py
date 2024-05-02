@@ -50,10 +50,10 @@ def main():
         prediction = predict_thyroid(Age, Sex, TSH, TT4, FTI, on_thyroxine, on_antithyroid_medication, goitre, hypopituitary, psych, T3_measured)
         st.write(f"Patient has {prediction}")
 
-    def render_template(file_path):
-        with open(file_path, "r") as f:
-            template_content = f.read()
-        return template_content
+   # def render_template(file_path):
+       # with open(file_path, "r") as f:
+        #    template_content = f.read()
+       # return template_content
 
 
 
