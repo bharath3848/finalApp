@@ -35,17 +35,22 @@ def main():
     # Title and Image
     st.title("Thyroid Disorder Prediction")
     st.markdown('<style>h1 {color: red; text-align: center;font-size:100px; font-weight:bold;}</style>', unsafe_allow_html=True)
-    st.markdown('<style>body {background-color: yellow;}</style>', unsafe_allow_html=True)
-    st.image("./banner_img.png", use_column_width=True)
+    st.markdown('<style>body {background-color: black;}</style>', unsafe_allow_html=True)
+    st.image("C:/Users/bhara/Desktop/PRO/static/images/banner_img.png", use_column_width=True)
+    st.markdown('</div>', unsafe_allow_html=True)
+    st.markdown('<br>', unsafe_allow_html=True)  # Adding some space between Predict button and Prediction heading
+
 
     # Input fields
     st.subheader("Patient Information")
-    st.markdown('<style>h1 {color: green; text-align: center;font-size:40px; font-weight:bold;}</style>', unsafe_allow_html=True)
-    Age = st.number_input("Age", min_value=0, max_value=100, value=0)
+    st.markdown('<style>h1 {color: red;text-align:center;font-size:50px; font-weight:bold;}</style>', unsafe_allow_html=True)
+    st.markdown('<br>', unsafe_allow_html=True)  # Adding some space between Predict button and Prediction heading
+
+    Age = st.number_input("Age ", min_value=0, max_value=100, value=0, step=1)
     Sex = st.selectbox("Sex", ["Male", "Female"])
-    TSH = st.number_input("Level of Thyroid Stimulating Hormone (TSH)")
-    TT4 = st.number_input("Total Thyroxine (TT4)")
-    FTI = st.number_input("Free Thyroxine Index (FTI)")
+    TSH = st.number_input("Level of Thyroid Stimulating Hormone (TSH)", step=0.01)
+    TT4 = st.number_input("Total Thyroxine (TT4)", step=0.01)
+    FTI = st.number_input("Free Thyroxine Index (FTI)", step=0.01)
     on_thyroxine = st.selectbox("On Thyroxine", ["True", "False"])
     on_antithyroid_medication = st.selectbox("On Antithyroid Medication", ["True", "False"])
     goitre = st.selectbox("Goitre", ["True", "False"])
@@ -56,7 +61,8 @@ def main():
     if st.button("Predict"):
         prediction = predict_thyroid(Age, Sex, TSH, TT4, FTI, on_thyroxine, on_antithyroid_medication, goitre, hypopituitary, psych, T3_measured)
         st.subheader("Prediction")
-        st.markdown(f"<p style='color:red; font-size:60px; font-weight:bold;'>Patient has {prediction}</p>", unsafe_allow_html=True)
+        st.markdown(f"<p style='color:red; font-size:60px; font-weight:bold; text-align: center;'>Patient has {prediction}</p>", unsafe_allow_html=True)
+        st.markdown('<br>', unsafe_allow_html=True)  # Adding some space between Predict button and Prediction heading
 
     # Footer
     st.markdown(
