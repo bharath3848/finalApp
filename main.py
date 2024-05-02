@@ -32,9 +32,16 @@ def predict_thyroid(Age, Sex, TSH, TT4, FTI, on_thyroxine, on_antithyroid_medica
 
 # Streamlit app
 def main():    
+    # Title and Image
+    st.title("Thyroid Disorder Prediction")
+    st.markdown('<style>h1 {color: red; text-align: center;font-size:100px; font-weight:bold;}</style>', unsafe_allow_html=True)
+    st.markdown('<style>body {background-color: yellow;}</style>', unsafe_allow_html=True)
+    st.image("C:/Users/bhara/Desktop/PRO/static/images/banner_img.png", use_column_width=True)
 
     # Input fields
-    Age = st.number_input("Age")
+    st.subheader("Patient Information")
+    st.markdown('<style>h1 {color: green; text-align: center;font-size:40px; font-weight:bold;}</style>', unsafe_allow_html=True)
+    Age = st.number_input("Age", min_value=0, max_value=100, value=0)
     Sex = st.selectbox("Sex", ["Male", "Female"])
     TSH = st.number_input("Level of Thyroid Stimulating Hormone (TSH)")
     TT4 = st.number_input("Total Thyroxine (TT4)")
@@ -48,8 +55,30 @@ def main():
 
     if st.button("Predict"):
         prediction = predict_thyroid(Age, Sex, TSH, TT4, FTI, on_thyroxine, on_antithyroid_medication, goitre, hypopituitary, psych, T3_measured)
-        st.write(f"Patient has {prediction}")
+        st.subheader("Prediction")
+        st.markdown(f"<p style='color:red; font-size:60px; font-weight:bold;'>Patient has {prediction}</p>", unsafe_allow_html=True)
 
+    # Footer
+    st.markdown(
+        """
+        <style>
+            .footer {
+                position: fixed;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                background-color: #333;
+                color: #fff;
+                text-align: center;
+                padding: 10px 0;
+            }
+        </style>
+        <div class="footer">
+            <p>Developed by Your Name</p>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
 if __name__ == "__main__":
     main()
