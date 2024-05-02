@@ -22,14 +22,14 @@ disease or not.
 - Feature Engineering
 - Model Building
 - Evaluting Model
-- Flask setup
+- Streamlit setup
 - Push to Github
 - deploying
 
 # Snippets of Project
 
 1)Webapp Home page
-![img](https://i.imgur.com/TLFjxId.png)
+![img](https://imgur.com/a/Y5WtuAE)
 
 
 # Authors
