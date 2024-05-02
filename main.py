@@ -33,7 +33,7 @@ def predict_thyroid(Age, Sex, TSH, TT4, FTI, on_thyroxine, on_antithyroid_medica
 # Streamlit app
 def main():    
     # Title and Image
-    st.title("Thyroid Disorder Prediction")
+    st.title("Thyroid Disease Prediction")
     st.markdown('<style>h1 {color: red; text-align: center;font-size:100px; font-weight:bold;}</style>', unsafe_allow_html=True)
     st.markdown('<style>body {background-color: black;}</style>', unsafe_allow_html=True)
     st.image("./banner_img.png", use_column_width=True)
@@ -80,7 +80,7 @@ def main():
             }
         </style>
         <div class="footer">
-            <p>Developed by Bharath</p>
+            <p>©</p>
         </div>
         """,
         unsafe_allow_html=True
